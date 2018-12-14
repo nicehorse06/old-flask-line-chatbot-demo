@@ -1,9 +1,9 @@
 本專案為 line python(Flask) bot 的 demo
 
 ## Line 資料參考網站
-[Line console message API](https://developers.line.me/en/)
+* [Line console message API](https://developers.line.me/en/)
 
-[Line python bot sdk](https://github.com/line/line-bot-sdk-python)
+* [Line python bot sdk](https://github.com/line/line-bot-sdk-python)
 
 
 ## line bot 流程
@@ -30,3 +30,7 @@ ngrok 把本地server給外部連
 * [Heroku部署參考網站](https://github.com/twtrubiks/Deploying-Flask-To-Heroku)
 
 * 推送到 Heroku 執行 `git push heroku master`
+
+## 其他參考的API
+
+[Star War API](https://swapi.co/)
