@@ -1,4 +1,3 @@
-# coding=utf-8
 import requests
 
 from flask import Flask, request, abort
@@ -15,20 +14,13 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('channel_access_token')
-handler = WebhookHandler('channel_secret')
+line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
+handler = WebhookHandler('YOUR_CHANNEL_SECRET')
 
 # simple Flask demo
 @app.route("/", methods=['GET'])
 def welcome():
     return 'Welcom to my web'
-
-# simple Flask demo
-@app.route('/add/<int:num1>/<int:num2>')
-def show_post(num1, num2):
-    # show the post with the given id, the id is an integer
-    sum =  num1 + num2
-    return 'Sum: ％d + &d = %d' % (num1, num2, sum)
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -43,6 +35,7 @@ def callback():
     try:
         handler.handle(body, signature)
     except InvalidSignatureError:
+        print("Invalid signature. Please check your channel access token/channel secret.")
         abort(400)
 
     return 'OK'
